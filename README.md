@@ -1,2 +1,2 @@
 # GameJam2021
-Skungedonk v.2
+Skungledonk v.2
