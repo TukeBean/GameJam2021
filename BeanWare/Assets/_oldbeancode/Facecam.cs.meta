@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: e44badfa0fa6bd04f90acd47320b7a63
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - player: {instanceID: 0}
+  - myImage: {instanceID: 0}
+  - imageStage1: {fileID: 21300000, guid: b23f25eb8d5828e46b3853994fc1f110, type: 3}
+  - imageStage2: {fileID: 21300000, guid: c3a6eafb55f061949a7a9b2ec4efc511, type: 3}
+  - imageStage3: {fileID: 21300000, guid: e6e344604dd9d6e45b6eb1a5aacdad8e, type: 3}
+  - imageStage4: {fileID: 21300000, guid: 0a3679d4e85dba74fb6f4e67ae100ce2, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
