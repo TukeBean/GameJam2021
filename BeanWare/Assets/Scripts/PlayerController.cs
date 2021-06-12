@@ -1,9 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 public class PlayerController : MonoBehaviour
 {
+    public Text comboText;
     public HealthBar playerHealthBar;
     public HealthBar enemyHealthBar;
     public int playerHealth = 3;
@@ -12,10 +13,11 @@ public class PlayerController : MonoBehaviour
     public int failedOrders = 0;
     public int successfulOrderCounter = 0;
 
-    // Update is called once per frame
-    void Update()
+    private void Start()
     {
-
+        // set the health of the player and enemy at start of scene
+        playerHealthBar.setMaxHealth(3);
+        enemyHealthBar.setMaxHealthEnemy(8);
     }
 
     public void setEnemyHealth(int hp)
@@ -60,12 +62,13 @@ public class PlayerController : MonoBehaviour
     {
         // when the order is failed
         playerTakeDamage(1);
-        resetCombo();
+        incrementFailedOrder();
     }
 
     public void playerTakeDamage(int dmg)
     {
         playerHealth -= dmg;
+        playerHealthBar.DecrementBar(dmg);
         // check lose condition
         if (playerHealth == 0)
         {
@@ -76,6 +79,7 @@ public class PlayerController : MonoBehaviour
     public void enemyTakeDamage(int dmg)
     {
         enemyHealth -= dmg;
+        enemyHealthBar.DecrementBar(dmg);
         // check win condition
         if (enemyHealth == 0)
         {
@@ -86,10 +90,12 @@ public class PlayerController : MonoBehaviour
     public void incrementCombo()
     {
         ComboCounter++;
+        comboText.text = ComboCounter + "x";
     }
 
     public void resetCombo()
     {
         ComboCounter = 0;
+        comboText.text = ComboCounter + "x";
     }
 }

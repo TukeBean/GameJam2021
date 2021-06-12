@@ -11,26 +11,25 @@ public class HealthBar : MonoBehaviour
 
     public void setMaxHealth(int hp)
     {
-        slider.maxValue = hp;
-        slider.value = hp;
+        Debug.Log("set max hp");
+        this.slider.maxValue = hp;
+        this.slider.value = hp;
         fill.color = gradient.Evaluate(1f);
     }
 
     public void setMaxHealthEnemy(int hp)
     {
-        slider.maxValue = hp;
+        this.slider.maxValue = hp;
     }
 
     public void incrementBar(int hp)
     {
-        slider.value += hp;
-
+        this.slider.value += hp;
         EvaluateSlider();
     }
     public void DecrementBar(int hp)
     {
-        slider.value -= hp;
-
+        this.slider.value -= hp;
         EvaluateSlider();
     }
 

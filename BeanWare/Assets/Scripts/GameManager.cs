@@ -41,5 +41,7 @@ public class GameManager : MonoBehaviour
     {
         // this is triggered when the ingredient is NOT successfully hit within bounds or missed entirely
         Debug.Log("Missed!");
+        player.resetCombo();
+        player.playerTakeDamage(1);
     }
 }
