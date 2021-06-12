@@ -17,6 +17,20 @@ public class PlayerController : MonoBehaviour
 
     }
 
+    void successfulOrder()
+    {
+        // when the order is completely without fault
+        enemyTakeDamage(1);
+        incrementCombo();
+    }
+
+    void failedOrder()
+    {
+        // when the order is failed
+        playerTakeDamage(1);
+        resetCombo();
+    }
+
     void playerTakeDamage(int dmg)
     {
         playerHealth -= dmg;

@@ -21,24 +21,4 @@ public class ButtonController : MonoBehaviour
             Debug.Log("spacebar DOWN");
         }
     }
-    void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.tag == "ingredient")
-        {
-            //check the correct key is being pressed, per ingredient
-            try
-            {       //check the game object is called Lettuce and checks the input equals Spacebar
-                if (collision.gameObject.name == "Lettuce" && Input.GetKeyDown(KeyCode.Space))
-                {
-                    Debug.Log("Lettuce SPACED ON!");
-                }
-            }
-            catch (System.Exception)
-            {
-
-                throw;
-            }
-
-        }
-    }
 }
