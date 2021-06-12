@@ -5,7 +5,6 @@ using UnityEngine;
 public class BeatObject : MonoBehaviour
 {
     public bool canBePressed;
-
     public KeyCode keyToPress;
 
     // Start is called before the first frame update
