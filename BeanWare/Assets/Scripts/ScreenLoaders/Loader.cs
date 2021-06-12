@@ -9,9 +9,11 @@ public static class Loader
     {
         TitleScreen,
         SplashScreen,
-        Loading,
+        LoadingScreen,
         GameScene,
         CreditsScreen,
+        VersusScreen,
+        InstructionsScreen,
     }
 
     public static void Load(Scene scene)
