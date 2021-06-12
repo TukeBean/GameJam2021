@@ -61,11 +61,13 @@ public class PlayerController : MonoBehaviour
         // when the order is failed
         playerTakeDamage(1);
         resetCombo();
+        incrementFailedOrder();
     }
 
     public void playerTakeDamage(int dmg)
     {
         playerHealth -= dmg;
+        playerHealthBar.DecrementBar(dmg);
         // check lose condition
         if (playerHealth == 0)
         {
@@ -76,6 +78,7 @@ public class PlayerController : MonoBehaviour
     public void enemyTakeDamage(int dmg)
     {
         enemyHealth -= dmg;
+        enemyHealthBar.DecrementBar(dmg);
         // check win condition
         if (enemyHealth == 0)
         {
