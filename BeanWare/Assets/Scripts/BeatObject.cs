@@ -23,6 +23,8 @@ public class BeatObject : MonoBehaviour
             {
                 // this is the state at which we can confirm the button has been pressed in the correct position
                 gameObject.SetActive(false);
+
+                GameManager.instance.BeatHit();
             }
         }
     }
@@ -40,11 +42,14 @@ public class BeatObject : MonoBehaviour
     private void OnTriggerExit2D(Collider2D other)
     {
         Debug.Log("collision exited");
-
-        if (other.tag == "ingredient")
+        if (gameObject.activeSelf && other.tag == "ingredient")
         {
             canBePressed = false;
+            GameManager.instance.BeatMissed();
+            gameObject.SetActive(false);
         }
+
+
     }
 
 }

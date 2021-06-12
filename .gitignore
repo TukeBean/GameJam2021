@@ -62,3 +62,4 @@ crashlytics-build.properties
 BeanWare/Temp/*
 BeanWare/Library/*
 BeanWare/Logs/*
+BeanWare/Library/ScriptAssemblies/Assembly-CSharp.dll

@@ -17,12 +17,12 @@ public class PlayerController : MonoBehaviour
 
     }
 
-    void setEnemyHealth(int hp)
+    public void setEnemyHealth(int hp)
     {
         enemyHealth = hp;
     }
 
-    void setPlayerHealth(int hp)
+    public void setPlayerHealth(int hp)
     {
         playerHealth = hp;
     }
@@ -37,7 +37,7 @@ public class PlayerController : MonoBehaviour
         return enemyHealth;
     }
 
-    void successfulOrder()
+    public void successfulOrder()
     {
         // when the order is completely without fault
         enemyTakeDamage(1);
@@ -45,24 +45,24 @@ public class PlayerController : MonoBehaviour
         incrementSuccessfulOrder();
     }
 
-    void incrementSuccessfulOrder()
+    public void incrementSuccessfulOrder()
     {
         successfulOrderCounter++;
     }
 
-    void incrementFailedOrder()
+    public void incrementFailedOrder()
     {
         failedOrders++;
     }
 
-    void failedOrder()
+    public void failedOrder()
     {
         // when the order is failed
         playerTakeDamage(1);
         resetCombo();
     }
 
-    void playerTakeDamage(int dmg)
+    public void playerTakeDamage(int dmg)
     {
         playerHealth -= dmg;
         // check lose condition
@@ -72,7 +72,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    void enemyTakeDamage(int dmg)
+    public void enemyTakeDamage(int dmg)
     {
         enemyHealth -= dmg;
         // check win condition
@@ -82,12 +82,12 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    void incrementCombo()
+    public void incrementCombo()
     {
         ComboCounter++;
     }
 
-    void resetCombo()
+    public void resetCombo()
     {
         ComboCounter = 0;
     }
