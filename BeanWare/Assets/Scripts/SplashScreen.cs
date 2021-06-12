@@ -16,6 +16,6 @@ public class SplashScreen : MonoBehaviour
     IEnumerator WaitBeforeTransiton()
     {
         yield return new WaitForSeconds(3);
-        Loader.Load(Loader.Scene.MainMenu);
+        Loader.Load(Loader.Scene.TitleScreen);
     }
 }
