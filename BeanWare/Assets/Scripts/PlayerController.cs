@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-
+    public HealthBar playerHealthBar;
+    public HealthBar enemyHealthBar;
     public int playerHealth = 3;
     public int enemyHealth = 8;
     public int ComboCounter = 0;
