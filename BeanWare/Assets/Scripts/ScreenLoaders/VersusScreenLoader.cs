@@ -15,6 +15,6 @@ public class VersusScreenLoader : MonoBehaviour
     IEnumerator WaitBeforeTransiton()
     {
         yield return new WaitForSeconds(3);
-        Loader.Load(Loader.Scene.GameScene);
+        Loader.Load(Loader.Scene.GameScreen);
     }
 }

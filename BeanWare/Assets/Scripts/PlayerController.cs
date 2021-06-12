@@ -4,7 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 public class PlayerController : MonoBehaviour
 {
-    public Text comboText;
+    public Text comboText; 
+    public Text comboTextShadow;
     public HealthBar playerHealthBar;
     public HealthBar enemyHealthBar;
     public int playerHealth = 3;
@@ -91,11 +92,13 @@ public class PlayerController : MonoBehaviour
     {
         ComboCounter++;
         comboText.text = ComboCounter + "x";
+        comboTextShadow.text = ComboCounter + "x";
     }
 
     public void resetCombo()
     {
         ComboCounter = 0;
         comboText.text = ComboCounter + "x";
+        comboTextShadow.text = ComboCounter + "x";
     }
 }
