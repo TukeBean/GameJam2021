@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
     public Text comboTextShadow;
     public HealthBar playerHealthBar;
     public HealthBar enemyHealthBar;
+    public bool punchBool;
     public int playerHealth = 3;
     public int enemyHealth = 8;
     public int ComboCounter = 0;
@@ -19,6 +20,29 @@ public class PlayerController : MonoBehaviour
         // set the health of the player and enemy at start of scene
         playerHealthBar.setMaxHealth(3);
         enemyHealthBar.setMaxHealthEnemy(8);
+        this.punchBool = false;
+    }
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            if (punchBool)
+            {
+                // PAWNCH
+                // GOES
+                // HERE
+                setPunchBool(false);
+            }
+        }
+    }
+    public bool getPunchBool()
+    {
+        return this.punchBool;
+    }
+
+    public void setPunchBool(bool bl)
+    {
+        this.punchBool = bl;
     }
 
     public void setEnemyHealth(int hp)

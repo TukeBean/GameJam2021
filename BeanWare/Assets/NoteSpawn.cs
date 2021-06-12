@@ -2,7 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NoteSpawn : MonoBehaviour {
+public class NoteSpawn : MonoBehaviour
+{
 
     public GameObject BottomBunPrefab;
     public GameObject PattyPrefab;
@@ -23,7 +24,8 @@ public class NoteSpawn : MonoBehaviour {
     private bool fail;
 
     // Start is called before the first frame update
-    void Start() {
+    void Start()
+    {
         ClassicPrefab.Add(BottomBunPrefab);
         ClassicPrefab.Add(PattyPrefab);
         ClassicPrefab.Add(LettucePrefab);
@@ -55,40 +57,57 @@ public class NoteSpawn : MonoBehaviour {
     }
 
     // Update is called once per frame
-    void Update() {
+    void Update()
+    {
 
-        if (!hasStarted) {
-            if (Input.anyKeyDown) {
+        if (!hasStarted)
+        {
+            if (Input.anyKeyDown)
+            {
                 hasStarted = true;
                 orderNum = 0;
                 noteNum = 0;
                 delay = 0;
             }
-        } else {
+        }
+        else
+        {
             BPMCount++;
-            if (BPMCount == 288) {
+            if (BPMCount == 288)
+            {
                 BPMCount = 0;
 
                 //Checks for a failed note, or an order being completely sent
-                if (fail || noteNum == Day1[orderNum].Count) {
+                if (fail || noteNum == Day1[orderNum].Count)
+                {
                     //If all active notes have been processed, start next order
-                    if (ActiveNotes.Count == 0) {
+                    if (ActiveNotes.Count == 0)
+                    {
+                        GameManager.instance.setPunchBool(true);
                         noteNum = 0;
                         orderNum++;
                         delay = 4;
                         fail = false;
                     }
-                } else {
+
+                }
+                else
+                {
                     //Checks if there's a delay
-                    if (delay == 0) {
+                    if (delay == 0 && !GameManager.instance.player.getPunchBool())
+                    {
+
                         //If no delays, sends the next note
                         GameObject note = Instantiate(Day1[orderNum][noteNum], new Vector3(800, 0, 0), new Quaternion(0, 0, 0, 0), BeatHolder) as GameObject;
                         ActiveNotes.Enqueue(note);
                         //Updates to next note
                         noteNum++;
-                    } else {
+                    }
+                    else
+                    {
                         //If there is a delay, decrements the delay
-                        delay--;
+                        if (!GameManager.instance.player.getPunchBool())
+                            delay--;
                     }
                 }
             }
@@ -97,15 +116,18 @@ public class NoteSpawn : MonoBehaviour {
         }
     }
 
-    public void hitNote() {
+    public void hitNote()
+    {
         //Dequeues the note that was hit
         ActiveNotes.Dequeue();
     }
 
-    public void failedNote() {
+    public void failedNote()
+    {
         fail = true;
         //Flushes all the notes of the failed order
-        while (ActiveNotes.Count > 0) {
+        while (ActiveNotes.Count > 0)
+        {
             ActiveNotes.Dequeue().SetActive(false);
         }
     }
