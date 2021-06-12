@@ -13,10 +13,11 @@ public class PlayerController : MonoBehaviour
     public int failedOrders = 0;
     public int successfulOrderCounter = 0;
 
-    // Update is called once per frame
-    void Update()
+    private void Start()
     {
-
+        // set the health of the player and enemy at start of scene
+        playerHealthBar.setMaxHealth(3);
+        enemyHealthBar.setMaxHealthEnemy(8);
     }
 
     public void setEnemyHealth(int hp)
