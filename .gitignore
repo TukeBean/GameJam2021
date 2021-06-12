@@ -55,6 +55,7 @@ sysinfo.txt
 # Builds
 *.apk
 *.unitypackage
+*.cache
 
 # Crashlytics generated file
 crashlytics-build.properties
@@ -62,3 +63,4 @@ crashlytics-build.properties
 BeanWare/Temp/*
 BeanWare/Library/*
 BeanWare/Logs/*
+BeanWare/obj/*
