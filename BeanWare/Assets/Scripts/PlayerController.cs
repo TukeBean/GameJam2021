@@ -17,6 +17,26 @@ public class PlayerController : MonoBehaviour
 
     }
 
+    void setEnemyHealth(int hp)
+    {
+        enemyHealth = hp;
+    }
+
+    void setPlayerHealth(int hp)
+    {
+        playerHealth = hp;
+    }
+
+    public int getPlayerHealth()
+    {
+        return playerHealth;
+    }
+
+    public int getEnemyHealth()
+    {
+        return enemyHealth;
+    }
+
     void successfulOrder()
     {
         // when the order is completely without fault
