@@ -9,7 +9,7 @@ public class PlayerController : MonoBehaviour
     public int enemyHealth = 8;
     public int ComboCounter = 0;
     public int failedOrders = 0;
-    public int successfulOrders = 0;
+    public int successfulOrderCounter = 0;
 
     // Update is called once per frame
     void Update()
@@ -42,6 +42,17 @@ public class PlayerController : MonoBehaviour
         // when the order is completely without fault
         enemyTakeDamage(1);
         incrementCombo();
+        incrementSuccessfulOrder();
+    }
+
+    void incrementSuccessfulOrder()
+    {
+        successfulOrderCounter++;
+    }
+
+    void incrementFailedOrder()
+    {
+        failedOrders++;
     }
 
     void failedOrder()
