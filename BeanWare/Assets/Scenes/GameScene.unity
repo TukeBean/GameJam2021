@@ -1427,6 +1427,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ae1afe03563d3344a1c9441060cbe4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  comboText: {fileID: 1425862592}
   playerHealthBar: {fileID: 1510197997}
   enemyHealthBar: {fileID: 433446955}
   playerHealth: 3
@@ -1765,7 +1766,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 8x
+  m_Text: '0x
+
+'
 --- !u!222 &1425862593
 CanvasRenderer:
   m_ObjectHideFlags: 0

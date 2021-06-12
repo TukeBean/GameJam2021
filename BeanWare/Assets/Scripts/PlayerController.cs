@@ -1,9 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 public class PlayerController : MonoBehaviour
 {
+    public Text comboText;
     public HealthBar playerHealthBar;
     public HealthBar enemyHealthBar;
     public int playerHealth = 3;
@@ -60,7 +61,6 @@ public class PlayerController : MonoBehaviour
     {
         // when the order is failed
         playerTakeDamage(1);
-        resetCombo();
         incrementFailedOrder();
     }
 
@@ -89,10 +89,12 @@ public class PlayerController : MonoBehaviour
     public void incrementCombo()
     {
         ComboCounter++;
+        comboText.text = ComboCounter + "x";
     }
 
     public void resetCombo()
     {
         ComboCounter = 0;
+        comboText.text = ComboCounter + "x";
     }
 }
