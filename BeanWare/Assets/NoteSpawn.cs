@@ -2,28 +2,28 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NoteSpawn : MonoBehaviour
-{
+public class NoteSpawn : MonoBehaviour {
 
     public GameObject BottomBunPrefab;
     public GameObject PattyPrefab;
     public GameObject LettucePrefab;
     public GameObject TomatoPrefab;
     public GameObject TopBunPrefab;
-    private List<List<GameObject>> Day1 = new List<List<GameObject>> ();
+    private List<List<GameObject>> Day1 = new List<List<GameObject>>();
     private List<GameObject> ClassicPrefab = new List<GameObject>();
     private List<GameObject> MeatyPrefab = new List<GameObject>();
     private List<GameObject> SaladPrefab = new List<GameObject>();
+    private Queue<GameObject> ActiveNotes = new Queue<GameObject>();
     public Transform BeatHolder;
     public int BPMCount = 0;
     public bool hasStarted;
     private int orderNum;
     private int noteNum;
     private int delay;
+    private bool fail;
 
     // Start is called before the first frame update
-    void Start()
-    {
+    void Start() {
         ClassicPrefab.Add(BottomBunPrefab);
         ClassicPrefab.Add(PattyPrefab);
         ClassicPrefab.Add(LettucePrefab);
@@ -55,12 +55,10 @@ public class NoteSpawn : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
-    {
+    void Update() {
 
         if (!hasStarted) {
-            if (Input.anyKeyDown)
-            {
+            if (Input.anyKeyDown) {
                 hasStarted = true;
                 orderNum = 0;
                 noteNum = 0;
@@ -71,29 +69,44 @@ public class NoteSpawn : MonoBehaviour
             if (BPMCount == 288) {
                 BPMCount = 0;
 
-                //Checks if there's a delay
-                if (delay == 0) {
-                    //If no delays, sends the next note
-                    GameObject L = Instantiate(Day1[orderNum][noteNum], new Vector3(800, 0, 0), new Quaternion(0, 0, 0, 0), BeatHolder) as GameObject;
-                    //Updates to next note
-                    noteNum++;
+                //Checks for a failed note, or an order being completely sent
+                if (fail || noteNum == Day1[orderNum].Count) {
+                    //If all active notes have been processed, start next order
+                    if (ActiveNotes.Count == 0) {
+                        noteNum = 0;
+                        orderNum++;
+                        delay = 4;
+                        fail = false;
+                    }
                 } else {
-                    //If there is a delay, decrements the delay
-                    delay--;
-                }
-
-                //Checks if the full order has been sent (Currently is hard coded to 1 order)
-                if(noteNum == Day1[orderNum].Count) {
-                    //Resets the note count
-                    noteNum = 0;
-                    //Moves to next order
-                    orderNum++;
-                    //adds a delay
-                    delay = 8;
+                    //Checks if there's a delay
+                    if (delay == 0) {
+                        //If no delays, sends the next note
+                        GameObject note = Instantiate(Day1[orderNum][noteNum], new Vector3(800, 0, 0), new Quaternion(0, 0, 0, 0), BeatHolder) as GameObject;
+                        ActiveNotes.Enqueue(note);
+                        //Updates to next note
+                        noteNum++;
+                    } else {
+                        //If there is a delay, decrements the delay
+                        delay--;
+                    }
                 }
             }
 
 
+        }
+    }
+
+    public void hitNote() {
+        //Dequeues the note that was hit
+        ActiveNotes.Dequeue();
+    }
+
+    public void failedNote() {
+        fail = true;
+        //Flushes all the notes of the failed order
+        while (ActiveNotes.Count > 0) {
+            ActiveNotes.Dequeue().SetActive(false);
         }
     }
 }
