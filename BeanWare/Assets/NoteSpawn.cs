@@ -86,7 +86,7 @@ public class NoteSpawn : MonoBehaviour
                         GameManager.instance.setPunchBool(true);
                         noteNum = 0;
                         orderNum++;
-                        delay = 4;
+                        delay = 0;
                         fail = false;
                     }
 
