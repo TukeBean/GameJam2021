@@ -7,13 +7,13 @@ public static class Loader
 {
     public enum Scene
     {
-        TitleScreen,
         SplashScreen,
-        LoadingScreen,
-        GameScene,
-        CreditsScreen,
-        VersusScreen,
+        TitleScreen,
         InstructionsScreen,
+        VersusScreen,
+        LoadingScreen,
+        GameScreen,
+        CreditsScreen,
     }
 
     public static void Load(Scene scene)
