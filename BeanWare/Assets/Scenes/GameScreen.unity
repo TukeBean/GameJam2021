@@ -3257,7 +3257,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7387955341528443607, guid: b0be656979554654eae8b4a14338615d, type: 3}
       propertyPath: BPMStep
-      value: 30
+      value: 42
       objectReference: {fileID: 0}
     - target: {fileID: 7387955341528443607, guid: b0be656979554654eae8b4a14338615d, type: 3}
       propertyPath: BeatHolder
