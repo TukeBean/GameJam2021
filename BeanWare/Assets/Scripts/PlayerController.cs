@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+
 public class PlayerController : MonoBehaviour
 {
     public Text comboText;
@@ -14,7 +15,6 @@ public class PlayerController : MonoBehaviour
     public int ComboCounter = 0;
     public int failedOrders = 0;
     public int successfulOrderCounter = 0;
-
     private void Start()
     {
         // set the health of the player and enemy at start of scene
@@ -31,10 +31,11 @@ public class PlayerController : MonoBehaviour
                 // PAWNCH
                 // GOES
                 // HERE
-                setPunchBool(false);
+                GameManager.instance.setPunchBool(false);
             }
         }
     }
+
     public bool getPunchBool()
     {
         return this.punchBool;

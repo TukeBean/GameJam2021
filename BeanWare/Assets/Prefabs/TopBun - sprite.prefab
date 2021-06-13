@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 506807409669181640}
   - component: {fileID: 506807409669181641}
   - component: {fileID: 506807409669181642}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: TopBun - sprite
   m_TagString: ingredient
   m_Icon: {fileID: 0}

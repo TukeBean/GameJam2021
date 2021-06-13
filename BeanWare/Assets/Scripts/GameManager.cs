@@ -17,7 +17,7 @@ public class GameManager : MonoBehaviour
     public GameObject punchPrompt;
     public bool gameOver = false;
     public int dayCount = 1;
-    public AudioSource music;
+    public Animator animator;
 
     // Start is called before the first frame update
     void Start()
@@ -54,6 +54,7 @@ public class GameManager : MonoBehaviour
     public void setPunchBool(bool bl)
     {
         player.setPunchBool(bl);
+        animator.SetBool("punch", bl);
     }
 
     public void BeatHit()

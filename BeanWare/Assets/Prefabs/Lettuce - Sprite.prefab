@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5357828708409032504}
   - component: {fileID: 5357828708409032505}
   - component: {fileID: 5357828708409032506}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Lettuce - Sprite
   m_TagString: ingredient
   m_Icon: {fileID: 0}
