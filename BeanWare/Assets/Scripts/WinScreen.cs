@@ -16,7 +16,7 @@ public class WinScreen : MonoBehaviour
     //Waits for 3 seconds then changes the scene
     IEnumerator WaitBeforeTransiton()
     {
-        yield return new WaitForSeconds(10);
+        yield return new WaitForSeconds(5);
         Loader.Load(Loader.Scene.CreditsScreen);
     }
 
