@@ -64,7 +64,7 @@ public class NoteSpawn : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
 
         if (!hasStarted)
@@ -119,8 +119,6 @@ public class NoteSpawn : MonoBehaviour
                     }
                 }
             }
-
-
         }
     }
 
@@ -186,10 +184,18 @@ public class NoteSpawn : MonoBehaviour
         }
     }
 
-    public void clearTray() {
+
+    public void clearTray() 
+    {
         //Flushes all the notes on the tray
-        while (SuccessNotes.Count > 0) {
+        while (SuccessNotes.Count > 0) 
+        {
             SuccessNotes.Dequeue().SetActive(false);
         }
+    }
+
+    public void setDay(int day)
+    {
+        Debug.Log("the current day is: " + day);
     }
 }

@@ -26,4 +26,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Titles/VersusScreen.unity
     guid: e29455e603f3c67478ceb494af030006
+  - enabled: 1
+    path: Assets/Scenes/CreditsScreen.unity
+    guid: 3fa6bd4aaec77824ea4060f61b1f5b03
   m_configObjects: {}

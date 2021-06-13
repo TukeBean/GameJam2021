@@ -48,11 +48,13 @@ public class PlayerController : MonoBehaviour
     public void setEnemyHealth(int hp)
     {
         enemyHealth = hp;
+        enemyHealthBar.setMaxHealthEnemy(hp);
     }
 
     public void setPlayerHealth(int hp)
     {
         playerHealth = hp;
+        playerHealthBar.setMaxHealth(hp);
     }
 
     public int getPlayerHealth()
@@ -98,6 +100,7 @@ public class PlayerController : MonoBehaviour
         if (playerHealth == 0)
         {
             // LOSE DA GAME
+            GameManager.instance.loseGame();
         }
     }
 
@@ -109,6 +112,7 @@ public class PlayerController : MonoBehaviour
         if (enemyHealth == 0)
         {
             // WIN DA GAME - PROGRESS TO NEXT DAY
+            GameManager.instance.progressToNextDay();
         }
     }
 

@@ -194,7 +194,7 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: "C-C-C-Combo Maker, A BeanWare Game\n\n3D Assets, Character Sprites\n--------------------------\nJack\n\n\nPixel
-    Art, UI, Screens\n-------------------\nAimee\n\n\nMusic\n-----\nGarbhan\n\n\nProgramming\n------------\nSam\nRyan\nAimee\n\n\nFont\n----\nPixellari
+    Art, UI, Screens\n-------------------\nAimee\n\n\nMusic, SFX\n-----\nGarbhan\nPaul\n\n\nProgramming\n------------\nSam\nRyan\nAimee\n\n\nFont\n----\nPixellari
     by Zacchary Dempsey-Plante,\n https://ztdp.ca/\n"
 --- !u!222 &1032725460
 CanvasRenderer:

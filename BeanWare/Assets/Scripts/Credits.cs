@@ -16,7 +16,7 @@ public class Credits : MonoBehaviour
         text = GameObject.Find("CreditsText").GetComponent<Text>();
     }
 
-    void Update()
+    void FixedUpdate()
     {
         if (text.transform.position.y < 1800)
         {
@@ -27,7 +27,7 @@ public class Credits : MonoBehaviour
             Loader.Load(Loader.Scene.TitleScreen);
         }
 
-        
+
 
     }
 
