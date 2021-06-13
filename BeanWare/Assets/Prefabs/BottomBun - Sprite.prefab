@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 1838341046206604953}
   - component: {fileID: 1838341046206604952}
   - component: {fileID: 1838341046206604955}
-  - component: {fileID: 1838341046206604954}
   m_Layer: 0
   m_Name: BottomBun - Sprite
   m_TagString: ingredient
@@ -101,7 +100,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 6.83, y: 3.41}
+    oldSize: {x: 22.766666, y: 11.366667}
     newSize: {x: 6.83, y: 3.41}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -110,17 +109,3 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 16, y: 12.07}
   m_EdgeRadius: 0
---- !u!114 &1838341046206604954
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1838341046206604950}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5b138c7b9bd7b2946b3eb864d76fb79d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  canBePressed: 0
-  keyToPress: 98

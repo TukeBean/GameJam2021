@@ -85,38 +85,37 @@ public class NoteSpawn : MonoBehaviour
                 BPMCount = 0;
 
                 //Checks for a failed note, or an order being completely sent
-                if (fail || noteNum == Day1[orderNum].Count)
+                if ((fail && !sendOrder) || noteNum == Day1[orderNum].Count)
                 {
                     //If all active notes have been processed, start next order
                     if (ActiveNotes.Count == 0)
                     {
                         GameManager.instance.setPunchBool(true);
+                        sendOrder = true;
                         noteNum = 0;
                         orderNum++;
                         delay = 0;
-                        fail = false;
                     }
 
                 }
                 else
                 {
-                    //Checks if there's a delay
-                    if (delay == 0 && !GameManager.instance.player.getPunchBool())
+                    if (!sendOrder)
                     {
-
-                        //If no delays, sends the next note
                         GameObject note = Instantiate(Day1[orderNum][noteNum], new Vector3(800, 0, 0), new Quaternion(0, 0, 0, 0), BeatHolder) as GameObject;
                         ActiveNotes.Enqueue(note);
                         //Updates to next note
                         noteNum++;
-                    }
-                    else
+                    } 
+                    else if (!GameManager.instance.player.getPunchBool()) 
                     {
-                        //If there is a delay, decrements the delay
-                        if (!GameManager.instance.player.getPunchBool()) 
-                        {
-                            delay--;
+                        sendOrder = false;
+                        if (!fail) {
+                            orderComplete();
+                        } else {
+                            clearTray();
                         }
+                        fail = false;
                     }
                 }
             }
@@ -166,16 +165,14 @@ public class NoteSpawn : MonoBehaviour
 
         Debug.Log("Active Notes: " + ActiveNotes.Count);
         Debug.Log("Success Notes: " + SuccessNotes.Count);
+    }
 
-        if (ActiveNotes.Count == 0)
-        {
-            Debug.Log("Order Complete(?)");
-            GameManager.instance.player.successfulOrder();
+    public void orderComplete() {
+        Debug.Log("Order Complete(?)");
+        GameManager.instance.player.successfulOrder();
 
-            while (SuccessNotes.Count > 0) 
-            {
-                SuccessNotes.Dequeue().SetActive(false);
-            }
+        while (SuccessNotes.Count > 0) {
+            SuccessNotes.Dequeue().SetActive(false);
         }
     }
 
@@ -187,7 +184,9 @@ public class NoteSpawn : MonoBehaviour
         {
             ActiveNotes.Dequeue().SetActive(false);
         }
+    }
 
+    public void clearTray() {
         //Flushes all the notes on the tray
         while (SuccessNotes.Count > 0) {
             SuccessNotes.Dequeue().SetActive(false);
