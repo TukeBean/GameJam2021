@@ -11,7 +11,7 @@ public static class Loader
         TitleScreen,
         InstructionsScreen,
         VersusScreen,
-        LoadingScreen,
+        WinScreen,
         GameScreen,
         CreditsScreen,
     }

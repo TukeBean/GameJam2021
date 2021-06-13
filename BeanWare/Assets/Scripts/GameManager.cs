@@ -34,21 +34,25 @@ public class GameManager : MonoBehaviour
             musicTrack.Play();
         }
 
-        if (Input.anyKeyDown && gameOver)
+        if (gameOver)
         {
-            Loader.Load(Loader.Scene.CreditsScreen);
+            StartCoroutine(WaitBeforeTransiton());
+            
         }
     }
 
     public void setWinPrompt(bool bl)
     {
-        youWinPrompt.SetActive(bl);
+        Debug.Log("----------------hello!!!!!!");
+         //youWinPrompt.SetActive(bl);
         punchPrompt.SetActive(false);
+        Loader.Load(Loader.Scene.WinScreen);
     }
     public void setLosePrompt(bool bl)
     {
         youLosePrompt.SetActive(bl);
         punchPrompt.SetActive(false);
+       
     }
 
     public void setPunchBool(bool bl)
@@ -91,9 +95,16 @@ public class GameManager : MonoBehaviour
         // refill healthbars
         player.setPlayerHealth(3);
         // reset combocounter
-        player.resetCombo();
+       // player.resetCombo();
         // trigger next day's order in NoteSpawn
-        dayCount++;
-        noteSpawn.setDay(dayCount);
+       // dayCount++;
+        // noteSpawn.setDay(dayCount);
+    }
+
+    //Waits for 3 seconds then changes the scene
+    IEnumerator WaitBeforeTransiton()
+    {
+        yield return new WaitForSeconds(3);
+        Loader.Load(Loader.Scene.CreditsScreen);
     }
 }

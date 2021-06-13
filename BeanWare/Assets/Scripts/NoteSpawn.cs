@@ -53,9 +53,6 @@ public class NoteSpawn : MonoBehaviour
         SaladPrefab.Add(LettucePrefab);
         SaladPrefab.Add(TomatoPrefab);
 
-        Day1.Add(ClassicPrefab);
-        Day1.Add(ClassicPrefab);
-        Day1.Add(MeatyPrefab);
         Day1.Add(SaladPrefab);
         Day1.Add(MeatyPrefab);
         Day1.Add(SaladPrefab);
@@ -64,7 +61,10 @@ public class NoteSpawn : MonoBehaviour
         Day1.Add(ClassicPrefab);
         Day1.Add(MeatyPrefab);
         Day1.Add(SaladPrefab);
-
+        Day1.Add(ClassicPrefab);
+        Day1.Add(MeatyPrefab);
+        Day1.Add(ClassicPrefab);
+        
         hasStarted = true;
         orderNum = 0;
         noteNum = 0;
