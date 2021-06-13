@@ -23,6 +23,7 @@ public class NoteSpawn : MonoBehaviour
     public Queue<GameObject> SuccessNotes = new Queue<GameObject>();
     public Transform BeatHolder;
     public int BPMCount = 0;
+    public int BPMStep = 50;
     public bool hasStarted;
     private int orderNum;
     private int noteNum;
@@ -80,7 +81,7 @@ public class NoteSpawn : MonoBehaviour
         else
         {
             BPMCount++;
-            if (BPMCount == 144)
+            if (BPMCount == BPMStep)
             {
                 BPMCount = 0;
 
