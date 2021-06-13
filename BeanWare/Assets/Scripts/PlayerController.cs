@@ -98,6 +98,7 @@ public class PlayerController : MonoBehaviour
         if (playerHealth == 0)
         {
             // LOSE DA GAME
+            GameManager.instance.loseGame();
         }
     }
 
@@ -109,6 +110,7 @@ public class PlayerController : MonoBehaviour
         if (enemyHealth == 0)
         {
             // WIN DA GAME - PROGRESS TO NEXT DAY
+            GameManager.instance.progressToNextDay();
         }
     }
 

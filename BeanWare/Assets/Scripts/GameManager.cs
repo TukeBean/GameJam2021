@@ -1,6 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -10,6 +12,8 @@ public class GameManager : MonoBehaviour
     public PlayerController player;
     public static GameManager instance;
     public NoteSpawn noteSpawn;
+    public GameObject youWinPrompt;
+    public GameObject youLosePrompt;
 
     // Start is called before the first frame update
     void Start()
@@ -29,6 +33,15 @@ public class GameManager : MonoBehaviour
                 musicTrack.Play();
             }
         }
+    }
+
+    public void setWinPrompt(bool bl)
+    {
+        youWinPrompt.SetActive(bl);
+    }
+    public void setLosePrompt(bool bl)
+    {
+        youLosePrompt.SetActive(bl);
     }
 
     public void setPunchBool(bool bl)
@@ -51,5 +64,22 @@ public class GameManager : MonoBehaviour
         Debug.Log("Missed!");
         player.resetCombo();
         player.playerTakeDamage(1);
+    }
+
+    public void loseGame()
+    {
+        setLosePrompt(true);
+        // trigger you lose prompt
+        // then tranisition to lose screen
+    }
+
+    public void progressToNextDay()
+    {
+
+        // trigger you win prompt
+        // refill healthbars
+        // reset combocounter
+        // trigger next day's order in NoteSpawn
+
     }
 }
