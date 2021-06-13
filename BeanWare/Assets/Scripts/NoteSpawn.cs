@@ -10,6 +10,11 @@ public class NoteSpawn : MonoBehaviour
     public GameObject LettucePrefab;
     public GameObject TomatoPrefab;
     public GameObject TopBunPrefab;
+    public GameObject BottomBunSpritePrefab;
+    public GameObject PattySpritePrefab;
+    public GameObject LettuceSpritePrefab;
+    public GameObject TomatoSpritePrefab;
+    public GameObject TopBunSpritePrefab;
     private List<List<GameObject>> Day1 = new List<List<GameObject>>();
     private List<GameObject> ClassicPrefab = new List<GameObject>();
     private List<GameObject> MeatyPrefab = new List<GameObject>();
@@ -23,6 +28,7 @@ public class NoteSpawn : MonoBehaviour
     private int noteNum;
     private int delay;
     private bool fail;
+    private bool sendOrder;
 
     // Start is called before the first frame update
     void Start()
@@ -74,7 +80,7 @@ public class NoteSpawn : MonoBehaviour
         else
         {
             BPMCount++;
-            if (BPMCount == 288)
+            if (BPMCount == 576)
             {
                 BPMCount = 0;
 
@@ -107,8 +113,10 @@ public class NoteSpawn : MonoBehaviour
                     else
                     {
                         //If there is a delay, decrements the delay
-                        if (!GameManager.instance.player.getPunchBool())
+                        if (!GameManager.instance.player.getPunchBool()) 
+                        {
                             delay--;
+                        }
                     }
                 }
             }
@@ -123,7 +131,39 @@ public class NoteSpawn : MonoBehaviour
         // ActiveNotes.Dequeue();
 
         // pop from active into the success queue
-        SuccessNotes.Enqueue(ActiveNotes.Dequeue());
+        string name = ActiveNotes.Dequeue().ToString().Split('(')[0];
+
+        GameObject preFab;
+
+        switch (name) 
+        {
+            case "BottomBun":
+                preFab = BottomBunSpritePrefab;
+                break;
+            case "Patty":
+                preFab = PattySpritePrefab;
+                break;
+            case "Lettuce":
+                preFab = LettuceSpritePrefab;
+                break;
+            case "Tomato":
+                preFab = TomatoSpritePrefab;
+                break;
+            case "TopBun":
+                preFab = TopBunSpritePrefab;
+                break;
+            default:
+                preFab = BottomBunSpritePrefab;
+                break;
+        }
+
+        GameObject hitNote = Instantiate(preFab, new Vector3(0, (-125 + 10 * SuccessNotes.Count), 0), new Quaternion(0, 0, 0, 0)) as GameObject;
+        //hitNote.SetActive(true);
+
+        SuccessNotes.Enqueue(hitNote);
+
+        hitNote.GetComponent<SpriteRenderer>().sortingOrder = SuccessNotes.Count;
+
         Debug.Log("Active Notes: " + ActiveNotes.Count);
         Debug.Log("Success Notes: " + SuccessNotes.Count);
 
@@ -131,6 +171,11 @@ public class NoteSpawn : MonoBehaviour
         {
             Debug.Log("Order Complete(?)");
             GameManager.instance.player.successfulOrder();
+
+            while (SuccessNotes.Count > 0) 
+            {
+                SuccessNotes.Dequeue().SetActive(false);
+            }
         }
     }
 
@@ -141,6 +186,11 @@ public class NoteSpawn : MonoBehaviour
         while (ActiveNotes.Count > 0)
         {
             ActiveNotes.Dequeue().SetActive(false);
+        }
+
+        //Flushes all the notes on the tray
+        while (SuccessNotes.Count > 0) {
+            SuccessNotes.Dequeue().SetActive(false);
         }
     }
 }
