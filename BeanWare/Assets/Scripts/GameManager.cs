@@ -17,6 +17,7 @@ public class GameManager : MonoBehaviour
     public GameObject punchPrompt;
     public bool gameOver = false;
     public int dayCount = 1;
+    public AudioSource music;
 
     // Start is called before the first frame update
     void Start()
@@ -29,12 +30,8 @@ public class GameManager : MonoBehaviour
     {
         if (!startPlaying)
         {
-            if (Input.anyKeyDown)
-            {
-                startPlaying = true;
-                beatScoller.hasStarted = true;
-                musicTrack.Play();
-            }
+            startPlaying = true;
+            musicTrack.Play();
         }
 
         if (Input.anyKeyDown && gameOver)
