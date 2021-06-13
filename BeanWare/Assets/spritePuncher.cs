@@ -4,11 +4,23 @@ using UnityEngine;
 
 public class spritePuncher : MonoBehaviour
 {
+    public SpriteRenderer spriteRenderer;
+    public Sprite punchSprite;
+    public Sprite idleSprite;
+    public Sprite cookSprite;
 
-
-    // Update is called once per frame
-    void Update()
+    public void punch()
     {
+        spriteRenderer.sprite = punchSprite;
+    }
 
+    public void idle()
+    {
+        spriteRenderer.sprite = idleSprite;
+    }
+
+    public void cook()
+    {
+        spriteRenderer.sprite = cookSprite;
     }
 }
