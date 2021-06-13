@@ -15,7 +15,7 @@ public class SplashScreen : MonoBehaviour
     //Waits for 3 seconds then changes the scene
     IEnumerator WaitBeforeTransiton()
     {
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(8);
         Loader.Load(Loader.Scene.TitleScreen);
     }
 }

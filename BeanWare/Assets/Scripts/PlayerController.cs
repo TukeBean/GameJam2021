@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 public class PlayerController : MonoBehaviour
 {
-    public Text comboText; 
+    public Text comboText;
     public Text comboTextShadow;
     public HealthBar playerHealthBar;
     public HealthBar enemyHealthBar;
