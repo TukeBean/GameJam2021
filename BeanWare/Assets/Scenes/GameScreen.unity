@@ -123,6 +123,81 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &43635177
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 43635178}
+  - component: {fileID: 43635180}
+  - component: {fileID: 43635179}
+  m_Layer: 5
+  m_Name: Milkshake
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &43635178
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 43635177}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 943596217}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -181.75124, y: 211.97554}
+  m_SizeDelta: {x: 636.4968, y: 260.5594}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &43635179
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 43635177}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 66ead9e110bb90a40961bc8c125d6d8f, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &43635180
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 43635177}
+  m_CullTransparentMesh: 1
 --- !u!1 &120467874
 GameObject:
   m_ObjectHideFlags: 0
@@ -2036,6 +2111,7 @@ RectTransform:
   - {fileID: 2004647165}
   - {fileID: 1240104628}
   - {fileID: 2045970017}
+  - {fileID: 43635178}
   m_Father: {fileID: 554690496}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3714,8 +3790,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 8.2759, y: 3.4453}
-  m_SizeDelta: {x: 9.5223, y: -13.6793}
+  m_AnchoredPosition: {x: 2.0369, y: 3.4452}
+  m_SizeDelta: {x: 9.522301, y: -13.6793}
   m_Pivot: {x: 1.8690939, y: -0.25185636}
 --- !u!212 &1895406100
 SpriteRenderer:
@@ -3804,16 +3880,16 @@ RectTransform:
   m_GameObject: {fileID: 1918326062}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.85, y: 0.85, z: 1}
   m_Children: []
   m_Father: {fileID: 554690496}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 635.9995, y: 5.9268036}
-  m_SizeDelta: {x: 173.8453, y: 175.7555}
-  m_Pivot: {x: 0.49999994, y: 0.20782599}
+  m_AnchoredPosition: {x: 647, y: 40}
+  m_SizeDelta: {x: 183.861, y: 143.2563}
+  m_Pivot: {x: 0.49999982, y: 0.11631596}
 --- !u!114 &1918326064
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3827,7 +3903,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spriteRenderer: {fileID: 0}
-  newSprite: {fileID: 21300000, guid: 986c31940c5134942842147f8f8072a4, type: 3}
+  newSprite: {fileID: 21300000, guid: 3d530a21e35c1f94b8c99d64e7aea67d, type: 3}
   floatStrength: 7
 --- !u!212 &1918326065
 SpriteRenderer:
@@ -3869,7 +3945,7 @@ SpriteRenderer:
   m_SortingLayerID: -1029040037
   m_SortingLayer: -1
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 38e39ee3f4470bc4ba9d03bd8d4c9d74, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 646a8e09f9cc3854ba6e6f999d6eddca, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
