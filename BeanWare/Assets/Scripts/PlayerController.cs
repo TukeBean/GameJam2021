@@ -11,7 +11,7 @@ public class PlayerController : MonoBehaviour
     public HealthBar enemyHealthBar;
     public bool punchBool;
     public int playerHealth = 3;
-    public int enemyHealth = 1;
+    public int enemyHealth = 8;
     public int ComboCounter = 0;
     public int failedOrders = 0;
     public int successfulOrderCounter = 0;
@@ -21,7 +21,7 @@ public class PlayerController : MonoBehaviour
     {
         // set the health of the player and enemy at start of scene
         playerHealthBar.setMaxHealth(3);
-        enemyHealthBar.setMaxHealthEnemy(1);
+        enemyHealthBar.setMaxHealthEnemy(8);
         this.punchBool = false;
     }
     private void Update()
