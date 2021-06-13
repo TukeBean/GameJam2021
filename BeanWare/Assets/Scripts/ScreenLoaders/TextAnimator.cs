@@ -22,4 +22,19 @@ public static class TextAnimator
         }
     }
 
+    public static void flashTextRed(Text text)
+    {
+        timer = timer + Time.deltaTime;
+        if (timer >= 0.5)
+        {
+            text.color = Color.red;
+        }
+        if (timer >= 1)
+        {
+            text.color = Color.white;
+            timer = 0;
+
+        }
+    }
+
 }

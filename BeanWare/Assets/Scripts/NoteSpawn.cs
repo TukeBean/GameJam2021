@@ -14,7 +14,8 @@ public class NoteSpawn : MonoBehaviour
     private List<GameObject> ClassicPrefab = new List<GameObject>();
     private List<GameObject> MeatyPrefab = new List<GameObject>();
     private List<GameObject> SaladPrefab = new List<GameObject>();
-    private Queue<GameObject> ActiveNotes = new Queue<GameObject>();
+    public Queue<GameObject> ActiveNotes = new Queue<GameObject>();
+    public Queue<GameObject> SuccessNotes = new Queue<GameObject>();
     public Transform BeatHolder;
     public int BPMCount = 0;
     public bool hasStarted;
@@ -119,7 +120,17 @@ public class NoteSpawn : MonoBehaviour
     public void hitNote()
     {
         //Dequeues the note that was hit
-        ActiveNotes.Dequeue();
+        // ActiveNotes.Dequeue();
+
+        // pop from active into the success queue
+        SuccessNotes.Enqueue(ActiveNotes.Dequeue());
+        Debug.Log("Active Notes: " + ActiveNotes.Count);
+        Debug.Log("Success Notes: " + SuccessNotes.Count);
+
+        if (ActiveNotes.Count == 0)
+        {
+            Debug.Log("Order Complete(?)");
+        }
     }
 
     public void failedNote()
