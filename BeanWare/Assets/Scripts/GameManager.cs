@@ -38,12 +38,12 @@ public class GameManager : MonoBehaviour
         {
             StartCoroutine(WaitBeforeTransiton());
             
-            
         }
     }
 
     public void setWinPrompt(bool bl)
     {
+        Debug.Log("----------------hello!!!!!!");
          //youWinPrompt.SetActive(bl);
         punchPrompt.SetActive(false);
         Loader.Load(Loader.Scene.WinScreen);
@@ -95,10 +95,10 @@ public class GameManager : MonoBehaviour
         // refill healthbars
         player.setPlayerHealth(3);
         // reset combocounter
-        player.resetCombo();
+       // player.resetCombo();
         // trigger next day's order in NoteSpawn
-        dayCount++;
-        noteSpawn.setDay(dayCount);
+       // dayCount++;
+        // noteSpawn.setDay(dayCount);
     }
 
     //Waits for 3 seconds then changes the scene
