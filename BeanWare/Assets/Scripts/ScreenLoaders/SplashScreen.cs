@@ -15,7 +15,7 @@ public class SplashScreen : MonoBehaviour
 
     private void FixedUpdate()
     {
-        spriteRenderer.size += new Vector2(0.01f, 0.01f);
+        spriteRenderer.size += new Vector2(0.025f, 0.02f);
     }
 
     //Waits for 3 seconds then changes the scene
