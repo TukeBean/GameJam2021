@@ -130,6 +130,7 @@ public class NoteSpawn : MonoBehaviour
         if (ActiveNotes.Count == 0)
         {
             Debug.Log("Order Complete(?)");
+            GameManager.instance.player.successfulOrder();
         }
     }
 
