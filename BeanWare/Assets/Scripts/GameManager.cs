@@ -16,6 +16,7 @@ public class GameManager : MonoBehaviour
     public GameObject youLosePrompt;
     public GameObject punchPrompt;
     public bool gameOver = false;
+    public int dayCount = 1;
 
     // Start is called before the first frame update
     void Start()
@@ -94,6 +95,7 @@ public class GameManager : MonoBehaviour
         // reset combocounter
         player.resetCombo();
         // trigger next day's order in NoteSpawn
-
+        dayCount++;
+        noteSpawn.setDay(dayCount);
     }
 }
