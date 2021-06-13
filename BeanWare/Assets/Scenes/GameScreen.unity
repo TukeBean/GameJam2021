@@ -1464,7 +1464,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 3
+  m_SortingOrder: 1
   m_TargetDisplay: 0
 --- !u!1 &635014587
 GameObject:
@@ -2644,6 +2644,10 @@ PrefabInstance:
     - target: {fileID: 7387955341528443606, guid: b0be656979554654eae8b4a14338615d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7387955341528443607, guid: b0be656979554654eae8b4a14338615d, type: 3}
+      propertyPath: BPMStep
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 7387955341528443607, guid: b0be656979554654eae8b4a14338615d, type: 3}
       propertyPath: BeatHolder
@@ -4257,7 +4261,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6571d31eed56fc34594e9d00767bced7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  beatTempo: 500
+  beatTempo: 288
   hasStarted: 0
 --- !u!224 &2097434977
 RectTransform:

@@ -23,6 +23,7 @@ public class NoteSpawn : MonoBehaviour
     public Queue<GameObject> SuccessNotes = new Queue<GameObject>();
     public Transform BeatHolder;
     public int BPMCount = 0;
+    public int BPMStep = 50;
     public bool hasStarted;
     private int orderNum;
     private int noteNum;
@@ -80,7 +81,7 @@ public class NoteSpawn : MonoBehaviour
         else
         {
             BPMCount++;
-            if (BPMCount == 576)
+            if (BPMCount == BPMStep)
             {
                 BPMCount = 0;
 
@@ -106,13 +107,16 @@ public class NoteSpawn : MonoBehaviour
                         ActiveNotes.Enqueue(note);
                         //Updates to next note
                         noteNum++;
-                    } 
-                    else if (!GameManager.instance.player.getPunchBool()) 
+                    }
+                    else if (!GameManager.instance.player.getPunchBool())
                     {
                         sendOrder = false;
-                        if (!fail) {
+                        if (!fail)
+                        {
                             orderComplete();
-                        } else {
+                        }
+                        else
+                        {
                             clearTray();
                         }
                         fail = false;
@@ -132,7 +136,7 @@ public class NoteSpawn : MonoBehaviour
 
         GameObject preFab;
 
-        switch (name) 
+        switch (name)
         {
             case "BottomBun":
                 preFab = BottomBunSpritePrefab;
@@ -165,11 +169,13 @@ public class NoteSpawn : MonoBehaviour
         Debug.Log("Success Notes: " + SuccessNotes.Count);
     }
 
-    public void orderComplete() {
+    public void orderComplete()
+    {
         Debug.Log("Order Complete(?)");
         GameManager.instance.player.successfulOrder();
 
-        while (SuccessNotes.Count > 0) {
+        while (SuccessNotes.Count > 0)
+        {
             SuccessNotes.Dequeue().SetActive(false);
         }
     }
@@ -185,10 +191,10 @@ public class NoteSpawn : MonoBehaviour
     }
 
 
-    public void clearTray() 
+    public void clearTray()
     {
         //Flushes all the notes on the tray
-        while (SuccessNotes.Count > 0) 
+        while (SuccessNotes.Count > 0)
         {
             SuccessNotes.Dequeue().SetActive(false);
         }
