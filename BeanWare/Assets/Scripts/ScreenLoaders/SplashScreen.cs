@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class SplashScreen : MonoBehaviour
 {
+    public SpriteRenderer spriteRenderer;
 
     // Start is called before the first frame update
     void Start()
@@ -12,10 +13,15 @@ public class SplashScreen : MonoBehaviour
         StartCoroutine(WaitBeforeTransiton());
     }
 
+    private void FixedUpdate()
+    {
+        spriteRenderer.size += new Vector2(0.01f, 0.01f);
+    }
+
     //Waits for 3 seconds then changes the scene
     IEnumerator WaitBeforeTransiton()
     {
-        yield return new WaitForSeconds(8);
+        yield return new WaitForSeconds(10);
         Loader.Load(Loader.Scene.TitleScreen);
     }
 }

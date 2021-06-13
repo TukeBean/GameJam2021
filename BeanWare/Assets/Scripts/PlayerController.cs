@@ -15,6 +15,8 @@ public class PlayerController : MonoBehaviour
     public int ComboCounter = 0;
     public int failedOrders = 0;
     public int successfulOrderCounter = 0;
+    public AudioSource punchNoise;
+    public AudioSource badNoise;
     private void Start()
     {
         // set the health of the player and enemy at start of scene
@@ -31,6 +33,7 @@ public class PlayerController : MonoBehaviour
                 // PAWNCH
                 // GOES
                 // HERE
+                punchNoise.Play();
                 GameManager.instance.setPunchBool(false);
             }
         }
@@ -97,6 +100,7 @@ public class PlayerController : MonoBehaviour
     {
         playerHealth -= dmg;
         playerHealthBar.DecrementBar(dmg);
+        badNoise.Play();
         // check lose condition
         if (playerHealth == 0)
         {
