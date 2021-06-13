@@ -2649,6 +2649,26 @@ PrefabInstance:
       propertyPath: BeatHolder
       value: 
       objectReference: {fileID: 2097434977}
+    - target: {fileID: 7387955341528443607, guid: b0be656979554654eae8b4a14338615d, type: 3}
+      propertyPath: PattySpritePrefab
+      value: 
+      objectReference: {fileID: 3194552108340718409, guid: 13fe9292bed70734c9ace227c82bca10, type: 3}
+    - target: {fileID: 7387955341528443607, guid: b0be656979554654eae8b4a14338615d, type: 3}
+      propertyPath: TomatoSpritePrefab
+      value: 
+      objectReference: {fileID: 3227189274582347455, guid: 552bfe987d022e84580d687294128b8d, type: 3}
+    - target: {fileID: 7387955341528443607, guid: b0be656979554654eae8b4a14338615d, type: 3}
+      propertyPath: TopBunSpritePrefab
+      value: 
+      objectReference: {fileID: 506807409669181639, guid: 75d4cf0c555c9874cbfce367b6c7daa4, type: 3}
+    - target: {fileID: 7387955341528443607, guid: b0be656979554654eae8b4a14338615d, type: 3}
+      propertyPath: LettuceSpritePrefab
+      value: 
+      objectReference: {fileID: 5357828708409032503, guid: ec5b766e4f0ac5e43baace2824d90ee1, type: 3}
+    - target: {fileID: 7387955341528443607, guid: b0be656979554654eae8b4a14338615d, type: 3}
+      propertyPath: BottomBunSpritePrefab
+      value: 
+      objectReference: {fileID: 1838341046206604950, guid: 50f35165c152e514d80dee09c8dee948, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b0be656979554654eae8b4a14338615d, type: 3}
 --- !u!1 &1146193589
@@ -3553,7 +3573,7 @@ GameObject:
   - component: {fileID: 1888485349}
   m_Layer: 0
   m_Name: CenterButton
-  m_TagString: ingredient
+  m_TagString: Center
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3566,7 +3586,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1888485344}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 1}
+  m_LocalPosition: {x: 0, y: 100, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2113856250}

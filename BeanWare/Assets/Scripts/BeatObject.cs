@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BeatObject : MonoBehaviour
 {
-    public bool canBePressed;
+    public bool canBePressed = false;
     public KeyCode keyToPress;
 
     // Start is called before the first frame update
@@ -32,7 +32,7 @@ public class BeatObject : MonoBehaviour
     {
         Debug.Log("collision entered");
 
-        if (other.tag == "ingredient")
+        if (other.tag == "Center")
         {
             canBePressed = true;
         }
@@ -41,12 +41,12 @@ public class BeatObject : MonoBehaviour
     private void OnTriggerExit2D(Collider2D other)
     {
         Debug.Log("collision exited");
-        if (gameObject.activeSelf && other.tag == "ingredient")
-        {
+        if (gameObject.activeSelf && other.tag == "Center") {
             canBePressed = false;
             GameManager.instance.BeatMissed();
             gameObject.SetActive(false);
         }
+        
 
 
     }
