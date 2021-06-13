@@ -48,11 +48,13 @@ public class PlayerController : MonoBehaviour
     public void setEnemyHealth(int hp)
     {
         enemyHealth = hp;
+        enemyHealthBar.setMaxHealthEnemy(hp);
     }
 
     public void setPlayerHealth(int hp)
     {
         playerHealth = hp;
+        playerHealthBar.setMaxHealth(hp);
     }
 
     public int getPlayerHealth()

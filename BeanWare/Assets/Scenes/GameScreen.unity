@@ -2379,8 +2379,10 @@ MonoBehaviour:
   beatScoller: {fileID: 2097434976}
   player: {fileID: 999577379}
   noteSpawn: {fileID: 327704423}
-  youWintPrompt: {fileID: 316400743}
+  youWinPrompt: {fileID: 316400743}
   youLosePrompt: {fileID: 1309818174}
+  punchPrompt: {fileID: 837390965}
+  gameOver: 0
 --- !u!4 &1139406306
 Transform:
   m_ObjectHideFlags: 0

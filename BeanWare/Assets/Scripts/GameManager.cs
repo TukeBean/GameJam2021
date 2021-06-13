@@ -14,6 +14,8 @@ public class GameManager : MonoBehaviour
     public NoteSpawn noteSpawn;
     public GameObject youWinPrompt;
     public GameObject youLosePrompt;
+    public GameObject punchPrompt;
+    public bool gameOver = false;
 
     // Start is called before the first frame update
     void Start()
@@ -33,15 +35,22 @@ public class GameManager : MonoBehaviour
                 musicTrack.Play();
             }
         }
+
+        if (Input.anyKeyDown && gameOver)
+        {
+            Loader.Load(Loader.Scene.CreditsScreen);
+        }
     }
 
     public void setWinPrompt(bool bl)
     {
         youWinPrompt.SetActive(bl);
+        punchPrompt.SetActive(false);
     }
     public void setLosePrompt(bool bl)
     {
         youLosePrompt.SetActive(bl);
+        punchPrompt.SetActive(false);
     }
 
     public void setPunchBool(bool bl)
@@ -68,17 +77,22 @@ public class GameManager : MonoBehaviour
 
     public void loseGame()
     {
-        setLosePrompt(true);
         // trigger you lose prompt
+        setLosePrompt(true);
         // then tranisition to lose screen
+        gameOver = true;
+        // play kazoo music again
+
     }
 
     public void progressToNextDay()
     {
-
         // trigger you win prompt
+        setWinPrompt(true);
         // refill healthbars
+        player.setPlayerHealth(3);
         // reset combocounter
+        player.resetCombo();
         // trigger next day's order in NoteSpawn
 
     }
