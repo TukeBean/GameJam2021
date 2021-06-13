@@ -7,11 +7,13 @@ public class NoteSpawn : MonoBehaviour
 
     public GameObject BottomBunPrefab;
     public GameObject PattyPrefab;
+    public GameObject CheesePrefab;
     public GameObject LettucePrefab;
     public GameObject TomatoPrefab;
     public GameObject TopBunPrefab;
     public GameObject BottomBunSpritePrefab;
     public GameObject PattySpritePrefab;
+    public GameObject CheeseSpritePrefab;
     public GameObject LettuceSpritePrefab;
     public GameObject TomatoSpritePrefab;
     public GameObject TopBunSpritePrefab;
@@ -23,6 +25,7 @@ public class NoteSpawn : MonoBehaviour
     public Queue<GameObject> SuccessNotes = new Queue<GameObject>();
     public Transform BeatHolder;
     public int BPMCount = 0;
+    public int BPMStep = 50;
     public bool hasStarted;
     private int orderNum;
     private int noteNum;
@@ -35,6 +38,7 @@ public class NoteSpawn : MonoBehaviour
     {
         ClassicPrefab.Add(BottomBunPrefab);
         ClassicPrefab.Add(PattyPrefab);
+        ClassicPrefab.Add(CheesePrefab);
         ClassicPrefab.Add(LettucePrefab);
         ClassicPrefab.Add(TomatoPrefab);
         ClassicPrefab.Add(TopBunPrefab);
@@ -80,7 +84,7 @@ public class NoteSpawn : MonoBehaviour
         else
         {
             BPMCount++;
-            if (BPMCount == 144)
+            if (BPMCount == BPMStep)
             {
                 BPMCount = 0;
 
@@ -142,6 +146,9 @@ public class NoteSpawn : MonoBehaviour
                 break;
             case "Patty":
                 preFab = PattySpritePrefab;
+                break;
+            case "Cheese":
+                preFab = CheeseSpritePrefab;
                 break;
             case "Lettuce":
                 preFab = LettuceSpritePrefab;
