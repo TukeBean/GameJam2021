@@ -112,8 +112,6 @@ public class NoteSpawn : MonoBehaviour
                     }
                 }
             }
-
-
         }
     }
 
@@ -142,5 +140,10 @@ public class NoteSpawn : MonoBehaviour
         {
             ActiveNotes.Dequeue().SetActive(false);
         }
+    }
+
+    public void setDay(int day)
+    {
+        Debug.Log("the current day is: " + day);
     }
 }
