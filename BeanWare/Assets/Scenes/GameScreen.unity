@@ -2834,9 +2834,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2097434977}
     - target: {fileID: 7387955341528443607, guid: b0be656979554654eae8b4a14338615d, type: 3}
+      propertyPath: CheesePrefab
+      value: 
+      objectReference: {fileID: 2134551736958673678, guid: b2615108b63e29e4a90421c853ba1bc6, type: 3}
+    - target: {fileID: 7387955341528443607, guid: b0be656979554654eae8b4a14338615d, type: 3}
       propertyPath: PattySpritePrefab
       value: 
       objectReference: {fileID: 3194552108340718409, guid: 13fe9292bed70734c9ace227c82bca10, type: 3}
+    - target: {fileID: 7387955341528443607, guid: b0be656979554654eae8b4a14338615d, type: 3}
+      propertyPath: CheeseSpritePrefab
+      value: 
+      objectReference: {fileID: 2134551736958673678, guid: 4e0133cd0fa261a449ca91ce7b43779a, type: 3}
     - target: {fileID: 7387955341528443607, guid: b0be656979554654eae8b4a14338615d, type: 3}
       propertyPath: TomatoSpritePrefab
       value: 
