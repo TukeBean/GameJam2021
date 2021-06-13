@@ -65,65 +65,55 @@ public class NoteSpawn : MonoBehaviour
         Day1.Add(MeatyPrefab);
         Day1.Add(SaladPrefab);
 
+        hasStarted = true;
+        orderNum = 0;
+        noteNum = 0;
+        delay = 0;
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-
-        if (!hasStarted)
+        BPMCount++;
+        if (BPMCount == BPMStep)
         {
-            if (Input.anyKeyDown)
-            {
-                hasStarted = true;
-                orderNum = 0;
-                noteNum = 0;
-                delay = 0;
-            }
-        }
-        else
-        {
-            BPMCount++;
-            if (BPMCount == BPMStep)
-            {
-                BPMCount = 0;
+            BPMCount = 0;
 
-                //Checks for a failed note, or an order being completely sent
-                if ((fail && !sendOrder) || noteNum == Day1[orderNum].Count)
+            //Checks for a failed note, or an order being completely sent
+            if ((fail && !sendOrder) || noteNum == Day1[orderNum].Count)
+            {
+                //If all active notes have been processed, start next order
+                if (ActiveNotes.Count == 0)
                 {
-                    //If all active notes have been processed, start next order
-                    if (ActiveNotes.Count == 0)
-                    {
-                        GameManager.instance.setPunchBool(true);
-                        sendOrder = true;
-                        noteNum = 0;
-                        orderNum++;
-                        delay = 0;
-                    }
-
+                    GameManager.instance.setPunchBool(true);
+                    sendOrder = true;
+                    noteNum = 0;
+                    orderNum++;
+                    delay = 0;
                 }
-                else
+
+            }
+            else
+            {
+                if (!sendOrder)
                 {
-                    if (!sendOrder)
+                    GameObject note = Instantiate(Day1[orderNum][noteNum], new Vector3(800, 0, 0), new Quaternion(0, 0, 0, 0), BeatHolder) as GameObject;
+                    ActiveNotes.Enqueue(note);
+                    //Updates to next note
+                    noteNum++;
+                }
+                else if (!GameManager.instance.player.getPunchBool())
+                {
+                    sendOrder = false;
+                    if (!fail)
                     {
-                        GameObject note = Instantiate(Day1[orderNum][noteNum], new Vector3(800, 0, 0), new Quaternion(0, 0, 0, 0), BeatHolder) as GameObject;
-                        ActiveNotes.Enqueue(note);
-                        //Updates to next note
-                        noteNum++;
+                        orderComplete();
                     }
-                    else if (!GameManager.instance.player.getPunchBool())
+                    else
                     {
-                        sendOrder = false;
-                        if (!fail)
-                        {
-                            orderComplete();
-                        }
-                        else
-                        {
-                            clearTray();
-                        }
-                        fail = false;
+                        clearTray();
                     }
+                    fail = false;
                 }
             }
         }

@@ -30,12 +30,8 @@ public class GameManager : MonoBehaviour
     {
         if (!startPlaying)
         {
-            if (Input.anyKeyDown)
-            {
-                startPlaying = true;
-                beatScoller.hasStarted = true;
-                musicTrack.Play();
-            }
+            startPlaying = true;
+            musicTrack.Play();
         }
 
         if (Input.anyKeyDown && gameOver)
