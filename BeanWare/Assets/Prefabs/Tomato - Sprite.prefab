@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3227189274582347440}
   - component: {fileID: 3227189274582347441}
   - component: {fileID: 3227189274582347442}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Tomato - Sprite
   m_TagString: ingredient
   m_Icon: {fileID: 0}

@@ -7,11 +7,13 @@ public class NoteSpawn : MonoBehaviour
 
     public GameObject BottomBunPrefab;
     public GameObject PattyPrefab;
+    public GameObject CheesePrefab;
     public GameObject LettucePrefab;
     public GameObject TomatoPrefab;
     public GameObject TopBunPrefab;
     public GameObject BottomBunSpritePrefab;
     public GameObject PattySpritePrefab;
+    public GameObject CheeseSpritePrefab;
     public GameObject LettuceSpritePrefab;
     public GameObject TomatoSpritePrefab;
     public GameObject TopBunSpritePrefab;
@@ -36,6 +38,7 @@ public class NoteSpawn : MonoBehaviour
     {
         ClassicPrefab.Add(BottomBunPrefab);
         ClassicPrefab.Add(PattyPrefab);
+        ClassicPrefab.Add(CheesePrefab);
         ClassicPrefab.Add(LettucePrefab);
         ClassicPrefab.Add(TomatoPrefab);
         ClassicPrefab.Add(TopBunPrefab);
@@ -143,6 +146,9 @@ public class NoteSpawn : MonoBehaviour
                 break;
             case "Patty":
                 preFab = PattySpritePrefab;
+                break;
+            case "Cheese":
+                preFab = CheeseSpritePrefab;
                 break;
             case "Lettuce":
                 preFab = LettuceSpritePrefab;
